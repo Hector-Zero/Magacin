@@ -6,7 +6,7 @@
 <meta name="description" content="Zero Magacin — Tu resumen diario personalizado por IA. Elige tus temas, diseño e idioma. Llega cada mañana a tu correo.">
 <meta property="og:title" content="Zero Magacin — Tu resumen diario con IA">
 <meta property="og:description" content="Cada mañana un email con lo que más te importa. Diseñado por ti, escrito por IA.">
-<meta property="og:url" content="https://zeroia.cl/digest">
+<meta property="og:url" content="https://hector-zero.github.io/Magacin/digest.html">
 <title>yournal — Diseña tu edición</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23f0ebe0'/><text x='50' y='70' font-family='Georgia,serif' font-size='70' text-anchor='middle' fill='%231e3a5f' font-style='italic'>y</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -900,7 +900,7 @@ async function submitSubscriber(nombre, email, digestNombre, password = null) {
   }
 
   if (password) {
-    await supabaseClient.auth.signUp({ email, password });
+    await supabaseClient.auth.signUp({ email, password, options: { emailRedirectTo: 'https://hector-zero.github.io/Magacin/cuenta.html' } });
   }
 
   document.querySelector('.submit-card').innerHTML = `
